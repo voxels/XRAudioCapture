@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4AE8754F-4236-4E5D-AA48-0A34FEDC3746"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9EBDF70A-91CF-4DAE-9620-7B48CEA2054E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XRAudioCapture iOS/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "9EBDF70A-91CF-4DAE-9620-7B48CEA2054E - 341e6f4f1a33dcfe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in XRAudioCapture_iOS.ContentView.body.getter : some"
+                  moduleName = "XRAudioCapture iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/voxels/Documents/Documents%20-%20Michael%E2%80%99s%20MacBook%20Pro/dev/XRAudioCapture/XRAudioCapture%20iOS/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1940">
+               </Location>
+               <Location
+                  uuid = "9EBDF70A-91CF-4DAE-9620-7B48CEA2054E - 5d2ac68da4aa6a10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in XRAudioCapture_iOS.ContentView.body.getter : some"
+                  moduleName = "XRAudioCapture iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/voxels/Documents/Documents%20-%20Michael%E2%80%99s%20MacBook%20Pro/dev/XRAudioCapture/XRAudioCapture%20iOS/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1824">
+               </Location>
+               <Location
+                  uuid = "9EBDF70A-91CF-4DAE-9620-7B48CEA2054E - 5d2ac68da4aa6a10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in XRAudioCapture_iOS.ContentView.body.getter : some"
+                  moduleName = "XRAudioCapture iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/voxels/Documents/Documents%20-%20Michael%E2%80%99s%20MacBook%20Pro/dev/XRAudioCapture/XRAudioCapture%20iOS/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1948">
+               </Location>
+               <Location
+                  uuid = "9EBDF70A-91CF-4DAE-9620-7B48CEA2054E - 5d2ac68da4aa6a10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in XRAudioCapture_iOS.ContentView.body.getter : some"
+                  moduleName = "XRAudioCapture iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/voxels/Documents/Documents%20-%20Michael%E2%80%99s%20MacBook%20Pro/dev/XRAudioCapture/XRAudioCapture%20iOS/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1884">
+               </Location>
+               <Location
+                  uuid = "9EBDF70A-91CF-4DAE-9620-7B48CEA2054E - 5d2ac68da4aa6a10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in XRAudioCapture_iOS.ContentView.body.getter : some"
+                  moduleName = "XRAudioCapture iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/voxels/Documents/Documents%20-%20Michael%E2%80%99s%20MacBook%20Pro/dev/XRAudioCapture/XRAudioCapture%20iOS/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1836">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

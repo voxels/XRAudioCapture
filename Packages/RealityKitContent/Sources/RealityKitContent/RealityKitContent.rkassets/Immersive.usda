@@ -1,0 +1,4797 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["Black_ABS_Plastic", "Ceiling_1", "Ceiling_2", "Floor_1", "Floor_2", "Floor_3", "Splatter_1", "Splatter_2", "Splatter_3", "Splatter_4", "Splatter_5", "Splatter_6", "Splatter_7", "Splatter_8", "Splatter_9", "Splatter_10", "Splatter_11", "Splatter_12", "Splatter_13", "Splatter_14", "Boot_Left", "Boot_Right", "Foot_1", "Foot_2", "Foot_3", "Foot_4", "Foot_5", "Foot_6", "Foot_7", "Foot_8", "Foot_9", "Sphere", "SphereMaterial", "Foot_10", "Foot_11", "Foot_12", "Fingerprint_1", "Fingerprint_2", "Fingerprint_3", "Fingerprint_4", "Fingerprint_5", "Blood_Splash_1", "Blood_Splash_2", "Blood_Splash_3", "Blood_Splash_4", "Blood_Splash_5", "Blood_Boot_Left", "Blood_Boot_Right", "Blood_Fingerprint_1", "Blood_Fingerprint_2", "Blood_Fingerprint_3", "Blood_Fingerprint_4", "Blood_Fingerprint_5", "Blood_Foot_1", "Blood_Foot_2", "Blood_Foot_3", "Blood_Foot_4", "Blood_Foot_5", "Blood_Foot_6", "Blood_Foot_7", "Blood_Foot_8", "Blood_Foot_9", "Blood_Foot_10", "Blood_Foot_11", "Blood_Foot_12", "Blood_Splatter_1", "Blood_Splatter_2", "Blood_Splatter_3", "Blood_Splatter_4", "Blood_Splatter_5", "Blood_Splatter_6", "Blood_Splatter_7", "Blood_Splatter_8", "Blood_Splatter_9", "Blood_Splatter_10", "Blood_Splatter_11", "Blood_Splatter_12", "Blood_Splatter_13", "Blood_Splatter_14"]
+    def "Black_ABS_Plastic" (
+        active = true
+        references = @BlackABSPlastic.usdz@
+    )
+    {
+        color3f inputs:Basecolor_Tint (
+            customData = {
+                dictionary realitykit = {
+                    float2 positionInSubgraph = (-45.51249, 49.172512)
+                    float2 sizeInSubgraph = (160.5, 53)
+                    int stackingOrderInSubgraph = 2293
+                }
+            }
+        )
+        float2 inputs:UV_Scale (
+            customData = {
+                dictionary realitykit = {
+                    float2 positionInSubgraph = (-725.2588, 351.55255)
+                    float2 sizeInSubgraph = (138.5, 53)
+                    int stackingOrderInSubgraph = 2280
+                }
+            }
+        )
+        float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Mix"
+        {
+            float2 ui:nodegraph:node:size = (109, 145)
+        }
+
+        over "Swizzle_1"
+        {
+            float2 ui:nodegraph:node:size = (145.5, 53)
+        }
+
+        over "Swizzle"
+        {
+            float2 ui:nodegraph:node:size = (133.5, 40)
+        }
+
+        over "Multiply_1"
+        {
+            float2 ui:nodegraph:node:size = (60, 36)
+        }
+
+        over "Dot"
+        {
+            float2 ui:nodegraph:node:size = (44, 18)
+        }
+
+        over "multiply"
+        {
+            float2 ui:nodegraph:node:size = (60, 36)
+        }
+
+        over "add"
+        {
+            float2 ui:nodegraph:node:size = (61.5, 36.5)
+        }
+
+        over "PreviewSurface"
+        {
+            float2 ui:nodegraph:node:size = (148.5, 199)
+        }
+
+        over "BaseColor"
+        {
+            float2 ui:nodegraph:node:size = (158.5, 235)
+        }
+
+        over "Roughness"
+        {
+            float2 ui:nodegraph:node:size = (158.5, 235)
+        }
+
+        over "Metallic"
+        {
+            float2 ui:nodegraph:node:size = (158.5, 235)
+        }
+
+        over "Normal"
+        {
+            float2 ui:nodegraph:node:size = (158.5, 235)
+        }
+    }
+
+    def Material "Blood_Boot_Left"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/Blood_Boot_Left/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Boot_Left/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Boot_Left/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Boot_Left/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Boot_Left/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Boot_7.png@
+            float2 inputs:st.connect = </Root/Blood_Boot_Left/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Boot_Left/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Boot_7_n.png@
+            float2 inputs:st.connect = </Root/Blood_Boot_Left/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Boot_Left/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Boot_7_a.png@
+            float2 inputs:st.connect = </Root/Blood_Boot_Left/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Boot_Left/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Boot_7_a.png@
+            float2 inputs:st.connect = </Root/Blood_Boot_Left/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Boot_Left/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Boot_Right"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/Blood_Boot_Right/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Boot_Right/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Boot_Right/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Boot_Right/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Boot_Right/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Boot_8.png@
+            float2 inputs:st.connect = </Root/Blood_Boot_Right/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Boot_Right/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Boot_8_n.png@
+            float2 inputs:st.connect = </Root/Blood_Boot_Right/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Boot_Right/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Boot_8_a.png@
+            float2 inputs:st.connect = </Root/Blood_Boot_Right/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Boot_Right/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Boot_8_a.png@
+            float2 inputs:st.connect = </Root/Blood_Boot_Right/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Boot_Right/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Fingerprint_2"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Fingerprint_2/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Fingerprint_2/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Fingerprint_2/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Fingerprint_2/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Fingerprint_2/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_1_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_2/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_1_a_n.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_2/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_1_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_2/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_1_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_2/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Fingerprint_1"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/Blood_Fingerprint_1/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Fingerprint_1/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Fingerprint_1/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Fingerprint_1/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Fingerprint_1/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_1_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_1/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_1_a_n.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_1/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_1_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_1/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_1_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_1/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splash_4"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/Blood_Splash_4/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splash_4/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splash_4/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splash_4/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splash_4/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_4.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_4/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_4_nrm.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_4/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_4_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_4/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_4_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_4/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splash_3"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/Blood_Splash_3/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splash_3/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splash_3/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splash_3/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splash_3/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_11.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_3/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_3_nrm.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_3/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_11_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_3/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "metallic"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_11_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_3/metallic/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_11_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_3/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splash_2"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/Blood_Splash_2/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splash_2/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splash_2/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splash_2/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splash_2/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_10.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_2/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_2_nm.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_2/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_10_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_2/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_10_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_2/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splash_1"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface.connect = </Root/Blood_Splash_1/PreviewSurface.outputs:out>
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splash_1/UsdPreviewSurface.outputs:surface>
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (126.25, 109.5)
+        float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
+
+        def Shader "UsdPreviewSurface" (
+            active = true
+        )
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            float inputs:clearcoatRoughness = 0
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splash_1/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splash_1/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splash_1/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splash_1/opacity.outputs:r>
+            float inputs:opacityThreshold
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_1.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_1/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_1_nm.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_1/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_1_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_1/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "PreviewSurface" (
+            active = false
+        )
+        {
+            uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (-255, 105)
+            float2 ui:nodegraph:node:size = (159.5, 307)
+            int ui:nodegraph:node:stackingOrder = 2
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["Advanced", "inputs:clearcoatRoughness"]
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_1_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_1/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Fingerprint_3"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Fingerprint_3/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Fingerprint_3/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Fingerprint_3/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Fingerprint_3/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Fingerprint_3/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_b.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_3/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_b_n.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_3/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_3/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_3/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Fingerprint_4"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Fingerprint_4/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Fingerprint_4/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Fingerprint_4/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Fingerprint_4/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Fingerprint_4/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_c.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_4/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_c_n.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_4/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_4/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_4/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_1"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/Blood_Foot_1/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_1/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_1/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_1/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_1/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_10.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_1/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_10_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_1/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_10_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_1/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_10_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_1/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_2"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_2/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_2/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_2/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_2/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_2/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_2_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_2/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_2_a_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_2/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_2_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_2/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_2_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_2/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_3"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_3/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_3/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_3/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_3/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_3/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_2_b.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_3/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_2_b_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_3/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_2_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_3/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_2_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_3/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_4"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_4/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_4/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_4/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_4/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_4/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_3_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_4/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_3_a_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_4/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_3_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_4/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_3_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_4/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_5"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_5/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_5/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_5/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_5/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_5/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_3_b.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_5/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_3_b_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_5/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_3_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_5/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_3_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_5/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_6"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_6/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_6/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_6/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_6/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_6/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_4.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_6/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_6/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_4_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_6/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_6/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_4_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_6/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_6/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_4_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_6/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_6/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_7"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_7/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_7/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_7/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_7/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_7/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_5.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_7/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_7/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_5_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_7/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_7/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_5_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_7/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_7/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_5_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_7/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_7/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_8"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_8/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_8/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_8/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_8/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_8/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_6.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_8/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_8/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_6_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_8/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_8/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_6_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_8/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_8/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_6_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_8/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_8/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_9"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_9/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_9/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_9/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_9/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_9/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_7_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_9/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_9/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_7_a_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_9/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_9/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_7_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_9/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_9/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_7_a_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_9/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_9/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_10"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_10/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_10/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_10/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_10/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_10/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_7_b.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_10/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_10/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_7_b_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_10/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_10/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_7_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_10/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_10/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_7_b_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_10/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_10/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_11"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_11/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_11/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_11/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_11/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_11/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_8.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_11/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_11/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_8_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_11/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_11/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_8_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_11/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_11/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_8_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_11/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_11/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Foot_12"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Foot_12/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Foot_12/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Foot_12/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Foot_12/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Foot_12/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_9.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_12/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_12/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_9_n.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_12/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_12/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_9_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_12/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_12/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Foot_9_a.png@
+            float2 inputs:st.connect = </Root/Blood_Foot_12/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Foot_12/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_1"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/Blood_Splatter_1/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_1/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_1/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_1/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_1/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_10.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_1/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_10_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_1/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_10_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_1/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_10_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_1/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_1/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_2"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_2/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_2/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_2/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_2/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_2/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_11.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_2/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_11_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_2/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_11_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_2/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_11_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_2/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_2/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_3"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_3/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_3/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_3/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_3/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_3/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_12.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_3/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_12_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_3/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_12_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_3/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_12_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_3/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_3/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_4"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_4/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_4/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_4/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_4/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_4/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_13.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_4/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_13_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_4/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_13_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_4/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_13_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_4/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_4/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_5"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_5/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_5/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_5/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_5/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_5/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_14.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_5/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_14_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_5/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_14_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_5/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_14_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_5/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_6"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_6/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_6/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_6/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_6/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_6/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_15.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_6/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_6/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_15_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_6/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_6/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_15_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_6/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_6/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_15_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_6/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_6/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_7"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_7/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_7/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_7/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_7/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_7/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_16.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_7/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_7/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_16_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_7/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_7/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_16_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_7/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_7/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_16_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_7/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_7/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_8"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_8/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_8/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_8/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_8/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_8/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_17.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_8/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_8/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_17_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_8/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_8/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_17_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_8/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_8/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_17_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_8/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_8/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_9"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_9/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_9/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_9/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_9/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_9/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_18.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_9/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_9/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_18_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_9/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_9/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_18_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_9/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_9/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_18_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_9/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_9/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_10"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_10/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_10/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_10/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_10/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_10/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_19.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_10/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_10/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_19_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_10/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_10/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_19_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_10/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_10/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_19_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_10/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_10/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_11"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_11/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_11/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_11/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_11/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_11/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_20.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_11/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_11/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_20_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_11/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_11/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_20_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_11/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_11/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_20_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_11/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_11/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_12"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_12/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_12/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_12/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_12/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_12/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_7.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_12/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_12/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_7_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_12/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_12/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_7_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_12/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_12/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_7_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_12/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_12/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_13"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_13/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_13/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_13/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_13/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_13/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_8.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_13/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_13/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_8_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_13/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_13/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_8_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_13/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_13/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_8_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_13/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_13/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splatter_14"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splatter_14/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splatter_14/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splatter_14/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splatter_14/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splatter_14/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_9.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_14/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_14/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_9_n.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_14/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_14/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_9_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_14/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_14/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_bloody_splatter_9_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splatter_14/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splatter_14/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Material "Blood_Splash_5"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Splash_5/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Splash_5/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Splash_5/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Splash_5/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Splash_5/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_13.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_5/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_13_nm.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_5/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_12_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_5/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_big_splash_12_a.png@
+            float2 inputs:st.connect = </Root/Blood_Splash_5/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Splash_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Cube "Ceiling_1" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splash_1> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            prepend token outputs:surface.connect = </Root/Ceiling_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+
+        def RealityKitComponent "VFXEmitter"
+        {
+            uniform token info:id = "RealityKit.VFXEmitter"
+
+            def RealityKitStruct "currentState"
+            {
+                token birthDirection = "Constant"
+                token birthLocation = "Volume"
+                int64 burstCount = 50
+                float3 emissionDirection = (0, 1, 0)
+                double emissionDuration = 0.21
+                double emissionDurationVariation = 0
+                token emitterShape = "Cylinder"
+                double idleDuration = 0
+                double idleDurationVariation = 0
+                bool isLocal = 0
+                bool isSpawningEnabled = 1
+                bool loops = 1
+                float particleSpeed = -0.005
+                float particleSpeedVariation = 5
+                float3 shapeSize = (0.1, 2, 0.1)
+                bool spawnInheritParentColor = 0
+                token spawnOccasion = "OnBirth"
+                float spawnSpreadFactor = 0.2
+                float spawnSpreadFactorVariation = 0
+                float spawnVelocityFactor = 0.4
+                double warmupDuration = 0
+
+                def RealityKitStruct "mainEmitter"
+                {
+                    float3 acceleration = (0, 0, 0)
+                    token billboardMode = "Billboard"
+                    float birthRate = 150
+                    float birthRateVariation = 1000
+                    token blendMode = "Additive"
+                    float colorEvolutionPower = 1
+                    float dampingFactor = 0
+                    float4 endColorA = (0.0013309671, 0.03458923, 1, 1)
+                    float4 endColorB = (0.11386989, 0.0064959256, 0.10626237, 1)
+                    bool isLightingEnabled = 0
+                    float noiseAnimationSpeed = 0
+                    float noiseScale = 1
+                    float noiseStrength = 4
+                    token opacityOverLife = "QuickFadeInOut"
+                    float particleAngle = 0
+                    float particleAngleVariation = 0
+                    float particleAngularVelocity = 0
+                    float particleAngularVelocityVariation = 0
+                    asset particleImage = @ParticleEmitterPresetTextures/rain.png@
+                    double particleLifeSpan = 0.04
+                    double particleLifeSpanVariation = 0.002
+                    float particleMass = 1
+                    float particleMassVariation = 0
+                    float particleSize = 0.004
+                    float particleSizeVariation = 0.0005
+                    float3 radialGravityCenter = (1, 1, 0)
+                    float radialGravityStrength = 0
+                    float sizeMultiplierAtEndOfLifespan = 1
+                    float sizeMultiplierAtEndOfLifespanPower = 1
+                    token sortOrder = "IncreasingDepth"
+                    float spreadingAngle = 0.02
+                    float4 startColorA = (1, 1, 1, 0.19)
+                    float4 startColorB = (1, 0, 0.012888192, 0.14)
+                    float stretchFactor = 2
+                    bool useEndColor = 0
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 1
+                    float3 vortexDirection = (0, 1, 0)
+                    float vortexStrength = 0
+                }
+
+                def RealityKitStruct "spawnedEmitter"
+                {
+                    float3 acceleration = (0, -3, 0)
+                    token billboardMode = "Billboard"
+                    float birthRate = 300
+                    float birthRateVariation = 0
+                    token blendMode = "Additive"
+                    float colorEvolutionPower = 1
+                    float dampingFactor = 0
+                    float4 endColorA = (0.0013309671, 0.03458923, 1, 1)
+                    float4 endColorB = (0.11386989, 0.0064959256, 0.10626237, 1)
+                    bool isLightingEnabled = 0
+                    float noiseAnimationSpeed = 0
+                    float noiseScale = 0
+                    float noiseStrength = 0
+                    token opacityOverLife = "Constant"
+                    float particleAngle = 0
+                    float particleAngleVariation = 0
+                    float particleAngularVelocity = 0
+                    float particleAngularVelocityVariation = 0
+                    double particleLifeSpan = 0.06
+                    double particleLifeSpanVariation = 0.004
+                    float particleMass = 1
+                    float particleMassVariation = 0
+                    float particleSize = 0.0012
+                    float particleSizeVariation = 0
+                    float3 radialGravityCenter = (0, -3, -3)
+                    float radialGravityStrength = 0
+                    float sizeMultiplierAtEndOfLifespan = 1
+                    float sizeMultiplierAtEndOfLifespanPower = 1
+                    token sortOrder = "IncreasingID"
+                    float spreadingAngle = 1.2
+                    float4 startColorA = (1, 1, 1, 0.42)
+                    float4 startColorB = (1, 1, 1, 1)
+                    float stretchFactor = 0.3
+                    bool useEndColor = 0
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 0
+                    float3 vortexDirection = (0, 1, 0)
+                    float vortexStrength = 0
+                }
+            }
+        }
+    }
+
+    def Cube "Ceiling_2" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        reorder nameChildren = ["DefaultMaterial", "VFXEmitter"]
+        rel material:binding = </Root/Blood_Splash_2> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (1, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Ceiling_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+
+        def RealityKitComponent "VFXEmitter"
+        {
+            uniform token info:id = "RealityKit.VFXEmitter"
+
+            def RealityKitStruct "currentState"
+            {
+                token birthDirection = "Constant"
+                token birthLocation = "Volume"
+                int64 burstCount = 50
+                float3 emissionDirection = (0, 1, 0)
+                double emissionDuration = 0.21
+                double emissionDurationVariation = 0
+                token emitterShape = "Cylinder"
+                double idleDuration = 0
+                double idleDurationVariation = 0
+                bool isLocal = 0
+                bool isSpawningEnabled = 1
+                bool loops = 1
+                float particleSpeed = -0.005
+                float particleSpeedVariation = 5
+                float3 shapeSize = (0.1, 2, 0.1)
+                bool spawnInheritParentColor = 0
+                token spawnOccasion = "OnBirth"
+                float spawnSpreadFactor = 0.2
+                float spawnSpreadFactorVariation = 0
+                float spawnVelocityFactor = 0.4
+                double warmupDuration = 0
+
+                def RealityKitStruct "mainEmitter"
+                {
+                    float3 acceleration = (0, 0, 0)
+                    token billboardMode = "Billboard"
+                    float birthRate = 150
+                    float birthRateVariation = 1000
+                    token blendMode = "Additive"
+                    float colorEvolutionPower = 1
+                    float dampingFactor = 0
+                    float4 endColorA = (0.0013309671, 0.03458923, 1, 1)
+                    float4 endColorB = (0.11386989, 0.0064959256, 0.10626237, 1)
+                    bool isLightingEnabled = 0
+                    float noiseAnimationSpeed = 0
+                    float noiseScale = 1
+                    float noiseStrength = 4
+                    token opacityOverLife = "QuickFadeInOut"
+                    float particleAngle = 0
+                    float particleAngleVariation = 0
+                    float particleAngularVelocity = 0
+                    float particleAngularVelocityVariation = 0
+                    asset particleImage = @ParticleEmitterPresetTextures/rain.png@
+                    double particleLifeSpan = 0.04
+                    double particleLifeSpanVariation = 0.002
+                    float particleMass = 1
+                    float particleMassVariation = 0
+                    float particleSize = 0.004
+                    float particleSizeVariation = 0.0005
+                    float3 radialGravityCenter = (1, 1, 0)
+                    float radialGravityStrength = 0
+                    float sizeMultiplierAtEndOfLifespan = 1
+                    float sizeMultiplierAtEndOfLifespanPower = 1
+                    token sortOrder = "IncreasingDepth"
+                    float spreadingAngle = 0.02
+                    float4 startColorA = (1, 1, 1, 0.19)
+                    float4 startColorB = (1, 0, 0.012888192, 0.14)
+                    float stretchFactor = 2
+                    bool useEndColor = 0
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 1
+                    float3 vortexDirection = (0, 1, 0)
+                    float vortexStrength = 0
+                }
+
+                def RealityKitStruct "spawnedEmitter"
+                {
+                    float3 acceleration = (0, -3, 0)
+                    token billboardMode = "Billboard"
+                    float birthRate = 300
+                    float birthRateVariation = 0
+                    token blendMode = "Additive"
+                    float colorEvolutionPower = 1
+                    float dampingFactor = 0
+                    float4 endColorA = (0.0013309671, 0.03458923, 1, 1)
+                    float4 endColorB = (0.11386989, 0.0064959256, 0.10626237, 1)
+                    bool isLightingEnabled = 0
+                    float noiseAnimationSpeed = 0
+                    float noiseScale = 0
+                    float noiseStrength = 0
+                    token opacityOverLife = "Constant"
+                    float particleAngle = 0
+                    float particleAngleVariation = 0
+                    float particleAngularVelocity = 0
+                    float particleAngularVelocityVariation = 0
+                    double particleLifeSpan = 0.06
+                    double particleLifeSpanVariation = 0.004
+                    float particleMass = 1
+                    float particleMassVariation = 0
+                    float particleSize = 0.0012
+                    float particleSizeVariation = 0
+                    float3 radialGravityCenter = (0, -3, -3)
+                    float radialGravityStrength = 0
+                    float sizeMultiplierAtEndOfLifespan = 1
+                    float sizeMultiplierAtEndOfLifespanPower = 1
+                    token sortOrder = "IncreasingID"
+                    float spreadingAngle = 1.2
+                    float4 startColorA = (1, 1, 1, 0.42)
+                    float4 startColorB = (1, 1, 1, 1)
+                    float stretchFactor = 0.3
+                    bool useEndColor = 0
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 0
+                    float3 vortexDirection = (0, 1, 0)
+                    float vortexStrength = 0
+                }
+            }
+        }
+    }
+
+    def Cube "Floor_1" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splash_3> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (2, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Floor_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Floor_2" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splash_4> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (3, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Floor_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Floor_3" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splash_5> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (4, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Floor_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_2" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_2> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 0.5)
+        float3 xformOp:translate = (0, -5.727634e-8, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_3" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_3> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (1, -5.727634e-8, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_4" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        reorder nameChildren = ["Splatter_5", "DefaultMaterial"]
+        rel material:binding = </Root/Blood_Splatter_4> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 0.5)
+        float3 xformOp:translate = (2, -5.5879354e-8, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_1" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_1> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (5.0056195, -5.727634e-8, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_5" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_5> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 0.5)
+        float3 xformOp:translate = (3, -5.727634e-8, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_5/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_6" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_6> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (4, -5.727634e-8, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_6/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_7" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_7> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (5, -5.727634e-8, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_7/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_8" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_8> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (0, -5.727634e-8, 2)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_8/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_9" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_9> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (1, -5.727634e-8, 2)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_9/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_10" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_10> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (2, -5.727634e-8, 2)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_10/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_11" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_11> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (3, -5.727634e-8, 2)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_11/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_12" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_12> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (4, -5.727634e-8, 2)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_12/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_13" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_13> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 0.5)
+        float3 xformOp:translate = (5, -5.727634e-8, 2)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_13/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Splatter_14" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Splatter_14> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (0, -5.727634e-8, 3)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Splatter_14/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Boot_Left" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Boot_Left> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (0, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Boot_Left/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Boot_Right" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Boot_Right> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (0.12729529, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Boot_Right/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_1" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_1> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (0.2558186, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_2" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_2> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (0.3836347, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_3" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_3> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (0.51309204, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_4" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_4> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 0.01, 1)
+        float3 xformOp:translate = (0.7059795, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_5" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_5> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 0.01, 1)
+        float3 xformOp:translate = (0.9566534, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_5/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_6" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_6> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (1.1499836, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_6/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_7" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_7> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (1.279527, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_7/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_8" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_8> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (1.4061021, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_8/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_10" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_10> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (1.658932, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_10/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_11" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_11> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (1.8539935, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_11/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_12" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_12> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 2.220446e-16, 1)
+        float3 xformOp:translate = (2.0497856, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_12/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Fingerprint_1" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Fingerprint_1> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.15
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (0, 0, -1.5)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Fingerprint_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Fingerprint_2" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Fingerprint_2> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.15
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 0.5)
+        float3 xformOp:translate = (0.1518248, 0, -1.5)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Fingerprint_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Fingerprint_3" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Fingerprint_3> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.15
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (0.30547616, 0, -1.5)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Fingerprint_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Fingerprint_4" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        reorder nameChildren = ["Fingerprint_5", "DefaultMaterial"]
+        rel material:binding = </Root/Blood_Fingerprint_4> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.15
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 0.5)
+        float3 xformOp:translate = (0.45600367, 5.995389e-9, -1.4993485)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Fingerprint_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Material "Blood_Fingerprint_5"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Blood_Fingerprint_5/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/Blood_Fingerprint_5/diffuseColor.outputs:rgb>
+            float inputs:metallic = 0.75
+            normal3f inputs:normal = (0, 0, 1)
+            normal3f inputs:normal.connect = </Root/Blood_Fingerprint_5/normal.outputs:rgb>
+            float inputs:occlusion = 1
+            float inputs:occlusion.connect = </Root/Blood_Fingerprint_5/occlusion.outputs:r>
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/Blood_Fingerprint_5/opacity.outputs:r>
+            float inputs:roughness = 0
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_c.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_5/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "normal"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_c_n.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_5/normal/TexCoordReader.outputs:result>
+            normal3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_c_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_5/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/T_Fingerprints_2_c_a.png@
+            float2 inputs:st.connect = </Root/Blood_Fingerprint_5/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/Blood_Fingerprint_5/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Cube "Fingerprint_5" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Fingerprint_5> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.15
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 2.220446e-16, 1)
+        float3 xformOp:translate = (0.6105112, 0, -1.5)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Fingerprint_5/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cube "Foot_9" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Blood_Foot_9> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double size = 0.25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.01, 1)
+        float3 xformOp:translate = (1.5304602, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Foot_9/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Sphere "Sphere" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 1.5707963, 0)
+        }
+    )
+    {
+        rel material:binding = </Root/SphereMaterial> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double radius = 0.6
+        quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            prepend token outputs:surface.connect = </Root/Sphere/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Material "SphereMaterial"
+    {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/SphereMaterial/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+            color3f inputs:diffuseColor.connect = </Root/SphereMaterial/diffuseColor.outputs:rgb>
+            float inputs:occlusion = 0
+            float inputs:opacity = 1
+            float inputs:opacity.connect = </Root/SphereMaterial/opacity.outputs:r>
+            float inputs:roughness = 1
+            token outputs:surface
+        }
+
+        def Shader "diffuseColor"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/sphere.png@
+            float2 inputs:st.connect = </Root/SphereMaterial/diffuseColor/TexCoordReader.outputs:result>
+            color3f outputs:rgb
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/SphereMaterial/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "opacity"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/sphere_alpha.png@
+            float2 inputs:st.connect = </Root/SphereMaterial/opacity/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/SphereMaterial/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+
+        def Shader "occlusion"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @Materials/RawMaterials/sphere_alpha.png@
+            float2 inputs:st.connect = </Root/SphereMaterial/occlusion/TexCoordReader.outputs:result>
+            float outputs:r
+
+            def Shader "TexCoordReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                token inputs:varname.connect = </Root/SphereMaterial/UsdPreviewSurface.inputs:frame:stPrimvarName>
+                float2 outputs:result
+            }
+        }
+    }
+}
+

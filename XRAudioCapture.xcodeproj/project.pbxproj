@@ -1,0 +1,933 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E31CEB52B6BF3C200608609 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 1E31CEB42B6BF3C200608609 /* RealityKitContent */; };
+		1E31CEB72B6BF3C200608609 /* XRAudioCaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CEB62B6BF3C200608609 /* XRAudioCaptureApp.swift */; };
+		1E31CEB92B6BF3C200608609 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CEB82B6BF3C200608609 /* ContentView.swift */; };
+		1E31CEBB2B6BF3C200608609 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CEBA2B6BF3C200608609 /* ImmersiveView.swift */; };
+		1E31CEBD2B6BF3C200608609 /* ImageBasedLighting.skybox in Resources */ = {isa = PBXBuildFile; fileRef = 1E31CEBC2B6BF3C200608609 /* ImageBasedLighting.skybox */; };
+		1E31CEBF2B6BF3C300608609 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E31CEBE2B6BF3C300608609 /* Assets.xcassets */; };
+		1E31CEC22B6BF3C300608609 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E31CEC12B6BF3C300608609 /* Preview Assets.xcassets */; };
+		1E31CECD2B6BF3C400608609 /* XRAudioCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CECC2B6BF3C400608609 /* XRAudioCaptureTests.swift */; };
+		1E31CED72B6BF3FA00608609 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CED62B6BF3FA00608609 /* AudioModel.swift */; };
+		1E31CEDF2B6E7D5B00608609 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CEDE2B6E7D5B00608609 /* AppDelegate.swift */; };
+		1E31CEE12B6E7D5B00608609 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CEE02B6E7D5B00608609 /* ContentView.swift */; };
+		1E31CEE32B6E7D5C00608609 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E31CEE22B6E7D5C00608609 /* Assets.xcassets */; };
+		1E31CEE62B6E7D5C00608609 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E31CEE52B6E7D5C00608609 /* Preview Assets.xcassets */; };
+		1E31CEF02B6E7D5C00608609 /* XRAudioCapture_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CEEF2B6E7D5C00608609 /* XRAudioCapture_iOSTests.swift */; };
+		1E31CEFA2B6E7D5C00608609 /* XRAudioCapture_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CEF92B6E7D5C00608609 /* XRAudioCapture_iOSUITests.swift */; };
+		1E31CEFC2B6E7D5C00608609 /* XRAudioCapture_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CEFB2B6E7D5C00608609 /* XRAudioCapture_iOSUITestsLaunchTests.swift */; };
+		1E31CF062B6E7DB600608609 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31CED62B6BF3FA00608609 /* AudioModel.swift */; };
+		1E4C82302B94C25C004F75B2 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4C822F2B94C25C004F75B2 /* SessionManager.swift */; };
+		1E4C82352B94EE6C004F75B2 /* surf.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C82312B94EE6C004F75B2 /* surf.wav */; };
+		1E4C82362B94EE6C004F75B2 /* surf.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C82312B94EE6C004F75B2 /* surf.wav */; };
+		1E4C82372B94EE6C004F75B2 /* thunder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C82322B94EE6C004F75B2 /* thunder.wav */; };
+		1E4C82382B94EE6C004F75B2 /* thunder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C82322B94EE6C004F75B2 /* thunder.wav */; };
+		1E4C82392B94EE6C004F75B2 /* wind_grass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C82332B94EE6C004F75B2 /* wind_grass.wav */; };
+		1E4C823A2B94EE6C004F75B2 /* wind_grass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C82332B94EE6C004F75B2 /* wind_grass.wav */; };
+		1E4C823B2B94EE6C004F75B2 /* wind_gusts.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C82342B94EE6C004F75B2 /* wind_gusts.wav */; };
+		1E4C823C2B94EE6C004F75B2 /* wind_gusts.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C82342B94EE6C004F75B2 /* wind_gusts.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E31CEC92B6BF3C400608609 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E31CEA72B6BF3C200608609 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E31CEAE2B6BF3C200608609;
+			remoteInfo = XRAudioCapture;
+		};
+		1E31CEEC2B6E7D5C00608609 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E31CEA72B6BF3C200608609 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E31CEDB2B6E7D5B00608609;
+			remoteInfo = "XRAudioCapture iOS";
+		};
+		1E31CEF62B6E7D5C00608609 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E31CEA72B6BF3C200608609 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E31CEDB2B6E7D5B00608609;
+			remoteInfo = "XRAudioCapture iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E31CEAF2B6BF3C200608609 /* XRAudioCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XRAudioCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E31CEB32B6BF3C200608609 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		1E31CEB62B6BF3C200608609 /* XRAudioCaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRAudioCaptureApp.swift; sourceTree = "<group>"; };
+		1E31CEB82B6BF3C200608609 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1E31CEBA2B6BF3C200608609 /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
+		1E31CEBC2B6BF3C200608609 /* ImageBasedLighting.skybox */ = {isa = PBXFileReference; lastKnownFileType = file.skybox; path = ImageBasedLighting.skybox; sourceTree = "<group>"; };
+		1E31CEBE2B6BF3C300608609 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E31CEC12B6BF3C300608609 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1E31CEC32B6BF3C300608609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E31CEC82B6BF3C400608609 /* XRAudioCaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XRAudioCaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E31CECC2B6BF3C400608609 /* XRAudioCaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRAudioCaptureTests.swift; sourceTree = "<group>"; };
+		1E31CED62B6BF3FA00608609 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
+		1E31CEDC2B6E7D5B00608609 /* XRAudioCapture iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XRAudioCapture iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E31CEDE2B6E7D5B00608609 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1E31CEE02B6E7D5B00608609 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1E31CEE22B6E7D5C00608609 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E31CEE52B6E7D5C00608609 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1E31CEEB2B6E7D5C00608609 /* XRAudioCapture iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XRAudioCapture iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E31CEEF2B6E7D5C00608609 /* XRAudioCapture_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRAudioCapture_iOSTests.swift; sourceTree = "<group>"; };
+		1E31CEF52B6E7D5C00608609 /* XRAudioCapture iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XRAudioCapture iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E31CEF92B6E7D5C00608609 /* XRAudioCapture_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRAudioCapture_iOSUITests.swift; sourceTree = "<group>"; };
+		1E31CEFB2B6E7D5C00608609 /* XRAudioCapture_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRAudioCapture_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1E4C822F2B94C25C004F75B2 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		1E4C82312B94EE6C004F75B2 /* surf.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = surf.wav; path = "../../../../../Library/Mobile Documents/.Trash/surf.wav"; sourceTree = "<group>"; };
+		1E4C82322B94EE6C004F75B2 /* thunder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = thunder.wav; path = "../../../../../Library/Mobile Documents/.Trash/thunder.wav"; sourceTree = "<group>"; };
+		1E4C82332B94EE6C004F75B2 /* wind_grass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wind_grass.wav; path = "../../../../../Library/Mobile Documents/.Trash/wind_grass.wav"; sourceTree = "<group>"; };
+		1E4C82342B94EE6C004F75B2 /* wind_gusts.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wind_gusts.wav; path = "../../../../../Library/Mobile Documents/.Trash/wind_gusts.wav"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E31CEAC2B6BF3C200608609 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E31CEB52B6BF3C200608609 /* RealityKitContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEC52B6BF3C400608609 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CED92B6E7D5B00608609 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEE82B6E7D5C00608609 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEF22B6E7D5C00608609 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E31CEA62B6BF3C200608609 = {
+			isa = PBXGroup;
+			children = (
+				1E31CEB12B6BF3C200608609 /* XRAudioCapture */,
+				1E31CEB22B6BF3C200608609 /* Packages */,
+				1E31CECB2B6BF3C400608609 /* XRAudioCaptureTests */,
+				1E31CEDD2B6E7D5B00608609 /* XRAudioCapture iOS */,
+				1E31CEEE2B6E7D5C00608609 /* XRAudioCapture iOSTests */,
+				1E31CEF82B6E7D5C00608609 /* XRAudioCapture iOSUITests */,
+				1E31CEB02B6BF3C200608609 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E31CEB02B6BF3C200608609 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E31CEAF2B6BF3C200608609 /* XRAudioCapture.app */,
+				1E31CEC82B6BF3C400608609 /* XRAudioCaptureTests.xctest */,
+				1E31CEDC2B6E7D5B00608609 /* XRAudioCapture iOS.app */,
+				1E31CEEB2B6E7D5C00608609 /* XRAudioCapture iOSTests.xctest */,
+				1E31CEF52B6E7D5C00608609 /* XRAudioCapture iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E31CEB12B6BF3C200608609 /* XRAudioCapture */ = {
+			isa = PBXGroup;
+			children = (
+				1E4C82312B94EE6C004F75B2 /* surf.wav */,
+				1E4C82322B94EE6C004F75B2 /* thunder.wav */,
+				1E4C82332B94EE6C004F75B2 /* wind_grass.wav */,
+				1E4C82342B94EE6C004F75B2 /* wind_gusts.wav */,
+				1E31CEB62B6BF3C200608609 /* XRAudioCaptureApp.swift */,
+				1E31CED62B6BF3FA00608609 /* AudioModel.swift */,
+				1E31CEB82B6BF3C200608609 /* ContentView.swift */,
+				1E31CEBA2B6BF3C200608609 /* ImmersiveView.swift */,
+				1E4C822F2B94C25C004F75B2 /* SessionManager.swift */,
+				1E31CEBE2B6BF3C300608609 /* Assets.xcassets */,
+				1E31CEBC2B6BF3C200608609 /* ImageBasedLighting.skybox */,
+				1E31CEC32B6BF3C300608609 /* Info.plist */,
+				1E31CEC02B6BF3C300608609 /* Preview Content */,
+			);
+			path = XRAudioCapture;
+			sourceTree = "<group>";
+		};
+		1E31CEB22B6BF3C200608609 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				1E31CEB32B6BF3C200608609 /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		1E31CEC02B6BF3C300608609 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1E31CEC12B6BF3C300608609 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1E31CECB2B6BF3C400608609 /* XRAudioCaptureTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E31CECC2B6BF3C400608609 /* XRAudioCaptureTests.swift */,
+			);
+			path = XRAudioCaptureTests;
+			sourceTree = "<group>";
+		};
+		1E31CEDD2B6E7D5B00608609 /* XRAudioCapture iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1E31CEDE2B6E7D5B00608609 /* AppDelegate.swift */,
+				1E31CEE02B6E7D5B00608609 /* ContentView.swift */,
+				1E31CEE22B6E7D5C00608609 /* Assets.xcassets */,
+				1E31CEE42B6E7D5C00608609 /* Preview Content */,
+			);
+			path = "XRAudioCapture iOS";
+			sourceTree = "<group>";
+		};
+		1E31CEE42B6E7D5C00608609 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1E31CEE52B6E7D5C00608609 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1E31CEEE2B6E7D5C00608609 /* XRAudioCapture iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E31CEEF2B6E7D5C00608609 /* XRAudioCapture_iOSTests.swift */,
+			);
+			path = "XRAudioCapture iOSTests";
+			sourceTree = "<group>";
+		};
+		1E31CEF82B6E7D5C00608609 /* XRAudioCapture iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E31CEF92B6E7D5C00608609 /* XRAudioCapture_iOSUITests.swift */,
+				1E31CEFB2B6E7D5C00608609 /* XRAudioCapture_iOSUITestsLaunchTests.swift */,
+			);
+			path = "XRAudioCapture iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E31CEAE2B6BF3C200608609 /* XRAudioCapture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E31CED02B6BF3C400608609 /* Build configuration list for PBXNativeTarget "XRAudioCapture" */;
+			buildPhases = (
+				1E31CEAB2B6BF3C200608609 /* Sources */,
+				1E31CEAC2B6BF3C200608609 /* Frameworks */,
+				1E31CEAD2B6BF3C200608609 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XRAudioCapture;
+			packageProductDependencies = (
+				1E31CEB42B6BF3C200608609 /* RealityKitContent */,
+			);
+			productName = XRAudioCapture;
+			productReference = 1E31CEAF2B6BF3C200608609 /* XRAudioCapture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E31CEC72B6BF3C400608609 /* XRAudioCaptureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E31CED32B6BF3C400608609 /* Build configuration list for PBXNativeTarget "XRAudioCaptureTests" */;
+			buildPhases = (
+				1E31CEC42B6BF3C400608609 /* Sources */,
+				1E31CEC52B6BF3C400608609 /* Frameworks */,
+				1E31CEC62B6BF3C400608609 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E31CECA2B6BF3C400608609 /* PBXTargetDependency */,
+			);
+			name = XRAudioCaptureTests;
+			productName = XRAudioCaptureTests;
+			productReference = 1E31CEC82B6BF3C400608609 /* XRAudioCaptureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E31CEDB2B6E7D5B00608609 /* XRAudioCapture iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E31CF032B6E7D5C00608609 /* Build configuration list for PBXNativeTarget "XRAudioCapture iOS" */;
+			buildPhases = (
+				1E31CED82B6E7D5B00608609 /* Sources */,
+				1E31CED92B6E7D5B00608609 /* Frameworks */,
+				1E31CEDA2B6E7D5B00608609 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XRAudioCapture iOS";
+			productName = "XRAudioCapture iOS";
+			productReference = 1E31CEDC2B6E7D5B00608609 /* XRAudioCapture iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E31CEEA2B6E7D5C00608609 /* XRAudioCapture iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E31CF042B6E7D5C00608609 /* Build configuration list for PBXNativeTarget "XRAudioCapture iOSTests" */;
+			buildPhases = (
+				1E31CEE72B6E7D5C00608609 /* Sources */,
+				1E31CEE82B6E7D5C00608609 /* Frameworks */,
+				1E31CEE92B6E7D5C00608609 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E31CEED2B6E7D5C00608609 /* PBXTargetDependency */,
+			);
+			name = "XRAudioCapture iOSTests";
+			productName = "XRAudioCapture iOSTests";
+			productReference = 1E31CEEB2B6E7D5C00608609 /* XRAudioCapture iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E31CEF42B6E7D5C00608609 /* XRAudioCapture iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E31CF052B6E7D5C00608609 /* Build configuration list for PBXNativeTarget "XRAudioCapture iOSUITests" */;
+			buildPhases = (
+				1E31CEF12B6E7D5C00608609 /* Sources */,
+				1E31CEF22B6E7D5C00608609 /* Frameworks */,
+				1E31CEF32B6E7D5C00608609 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E31CEF72B6E7D5C00608609 /* PBXTargetDependency */,
+			);
+			name = "XRAudioCapture iOSUITests";
+			productName = "XRAudioCapture iOSUITests";
+			productReference = 1E31CEF52B6E7D5C00608609 /* XRAudioCapture iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E31CEA72B6BF3C200608609 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					1E31CEAE2B6BF3C200608609 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					1E31CEC72B6BF3C400608609 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 1E31CEAE2B6BF3C200608609;
+					};
+					1E31CEDB2B6E7D5B00608609 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					1E31CEEA2B6E7D5C00608609 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 1E31CEDB2B6E7D5B00608609;
+					};
+					1E31CEF42B6E7D5C00608609 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 1E31CEDB2B6E7D5B00608609;
+					};
+				};
+			};
+			buildConfigurationList = 1E31CEAA2B6BF3C200608609 /* Build configuration list for PBXProject "XRAudioCapture" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E31CEA62B6BF3C200608609;
+			productRefGroup = 1E31CEB02B6BF3C200608609 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E31CEAE2B6BF3C200608609 /* XRAudioCapture */,
+				1E31CEC72B6BF3C400608609 /* XRAudioCaptureTests */,
+				1E31CEDB2B6E7D5B00608609 /* XRAudioCapture iOS */,
+				1E31CEEA2B6E7D5C00608609 /* XRAudioCapture iOSTests */,
+				1E31CEF42B6E7D5C00608609 /* XRAudioCapture iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E31CEAD2B6BF3C200608609 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E31CEBF2B6BF3C300608609 /* Assets.xcassets in Resources */,
+				1E4C82372B94EE6C004F75B2 /* thunder.wav in Resources */,
+				1E4C82392B94EE6C004F75B2 /* wind_grass.wav in Resources */,
+				1E31CEC22B6BF3C300608609 /* Preview Assets.xcassets in Resources */,
+				1E4C823B2B94EE6C004F75B2 /* wind_gusts.wav in Resources */,
+				1E31CEBD2B6BF3C200608609 /* ImageBasedLighting.skybox in Resources */,
+				1E4C82352B94EE6C004F75B2 /* surf.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEC62B6BF3C400608609 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEDA2B6E7D5B00608609 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E4C82382B94EE6C004F75B2 /* thunder.wav in Resources */,
+				1E4C823C2B94EE6C004F75B2 /* wind_gusts.wav in Resources */,
+				1E4C82362B94EE6C004F75B2 /* surf.wav in Resources */,
+				1E4C823A2B94EE6C004F75B2 /* wind_grass.wav in Resources */,
+				1E31CEE62B6E7D5C00608609 /* Preview Assets.xcassets in Resources */,
+				1E31CEE32B6E7D5C00608609 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEE92B6E7D5C00608609 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEF32B6E7D5C00608609 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E31CEAB2B6BF3C200608609 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E31CEB92B6BF3C200608609 /* ContentView.swift in Sources */,
+				1E31CEB72B6BF3C200608609 /* XRAudioCaptureApp.swift in Sources */,
+				1E31CED72B6BF3FA00608609 /* AudioModel.swift in Sources */,
+				1E4C82302B94C25C004F75B2 /* SessionManager.swift in Sources */,
+				1E31CEBB2B6BF3C200608609 /* ImmersiveView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEC42B6BF3C400608609 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E31CECD2B6BF3C400608609 /* XRAudioCaptureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CED82B6E7D5B00608609 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E31CEE12B6E7D5B00608609 /* ContentView.swift in Sources */,
+				1E31CEDF2B6E7D5B00608609 /* AppDelegate.swift in Sources */,
+				1E31CF062B6E7DB600608609 /* AudioModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEE72B6E7D5C00608609 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E31CEF02B6E7D5C00608609 /* XRAudioCapture_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E31CEF12B6E7D5C00608609 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E31CEFC2B6E7D5C00608609 /* XRAudioCapture_iOSUITestsLaunchTests.swift in Sources */,
+				1E31CEFA2B6E7D5C00608609 /* XRAudioCapture_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E31CECA2B6BF3C400608609 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E31CEAE2B6BF3C200608609 /* XRAudioCapture */;
+			targetProxy = 1E31CEC92B6BF3C400608609 /* PBXContainerItemProxy */;
+		};
+		1E31CEED2B6E7D5C00608609 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E31CEDB2B6E7D5B00608609 /* XRAudioCapture iOS */;
+			targetProxy = 1E31CEEC2B6E7D5C00608609 /* PBXContainerItemProxy */;
+		};
+		1E31CEF72B6E7D5C00608609 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E31CEDB2B6E7D5B00608609 /* XRAudioCapture iOS */;
+			targetProxy = 1E31CEF62B6E7D5C00608609 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1E31CECE2B6BF3C400608609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		1E31CECF2B6BF3C400608609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		1E31CED12B6BF3C400608609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"XRAudioCapture/Preview Content\"";
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noisederived.XRAudioCapture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		1E31CED22B6BF3C400608609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"XRAudioCapture/Preview Content\"";
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noisederived.XRAudioCapture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		1E31CED42B6BF3C400608609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noisederived.XRAudioCaptureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XRAudioCapture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XRAudioCapture";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		1E31CED52B6BF3C400608609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noisederived.XRAudioCaptureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XRAudioCapture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XRAudioCapture";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		1E31CEFD2B6E7D5C00608609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"XRAudioCapture iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "XRAudioCapture tracks your headphione motion to supply spatial audio";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noisederived.XRAudioCapture-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E31CEFE2B6E7D5C00608609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"XRAudioCapture iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "XRAudioCapture tracks your headphione motion to supply spatial audio";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noisederived.XRAudioCapture-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1E31CEFF2B6E7D5C00608609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noisederived.XRAudioCapture-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XRAudioCapture iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XRAudioCapture iOS";
+			};
+			name = Debug;
+		};
+		1E31CF002B6E7D5C00608609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noisederived.XRAudioCapture-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XRAudioCapture iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XRAudioCapture iOS";
+			};
+			name = Release;
+		};
+		1E31CF012B6E7D5C00608609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noisederived.XRAudioCapture-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "XRAudioCapture iOS";
+			};
+			name = Debug;
+		};
+		1E31CF022B6E7D5C00608609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FTMC23LTVL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noisederived.XRAudioCapture-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "XRAudioCapture iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E31CEAA2B6BF3C200608609 /* Build configuration list for PBXProject "XRAudioCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E31CECE2B6BF3C400608609 /* Debug */,
+				1E31CECF2B6BF3C400608609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E31CED02B6BF3C400608609 /* Build configuration list for PBXNativeTarget "XRAudioCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E31CED12B6BF3C400608609 /* Debug */,
+				1E31CED22B6BF3C400608609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E31CED32B6BF3C400608609 /* Build configuration list for PBXNativeTarget "XRAudioCaptureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E31CED42B6BF3C400608609 /* Debug */,
+				1E31CED52B6BF3C400608609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E31CF032B6E7D5C00608609 /* Build configuration list for PBXNativeTarget "XRAudioCapture iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E31CEFD2B6E7D5C00608609 /* Debug */,
+				1E31CEFE2B6E7D5C00608609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E31CF042B6E7D5C00608609 /* Build configuration list for PBXNativeTarget "XRAudioCapture iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E31CEFF2B6E7D5C00608609 /* Debug */,
+				1E31CF002B6E7D5C00608609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E31CF052B6E7D5C00608609 /* Build configuration list for PBXNativeTarget "XRAudioCapture iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E31CF012B6E7D5C00608609 /* Debug */,
+				1E31CF022B6E7D5C00608609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E31CEB42B6BF3C200608609 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1E31CEA72B6BF3C200608609 /* Project object */;
+}
